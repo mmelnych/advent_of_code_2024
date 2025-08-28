@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class GenerateDay
-  CLASS_CODE = <<~EOF.freeze
+  CLASS_CODE = <<~EOF
     module Day%<day>s
       class Task
         def initialize(sample)
@@ -19,7 +21,7 @@ class GenerateDay
     end
   EOF
 
-  INPUT_CODE = <<~EOF.freeze
+  INPUT_CODE = <<~EOF
     module Day%<day>s
       class Input
         class << self
@@ -38,7 +40,7 @@ class GenerateDay
     end
   EOF
 
-  SPEC_CODE = <<~EOF.freeze
+  SPEC_CODE = <<~EOF
     describe Day%<day>s::Task do
       subject(:task) { described_class.new(sample) }
 

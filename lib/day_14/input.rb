@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module Day14
   class Input
     class << self
-      INPUT_FILE_PATH = "#{__dir__}/input.txt".freeze
-      SAMPLE_INPUT_FILE_PATH = "#{__dir__}/input.sample.txt".freeze
+      INPUT_FILE_PATH = "#{__dir__}/input.txt"
+      SAMPLE_INPUT_FILE_PATH = "#{__dir__}/input.sample.txt"
 
       def call(sample)
         data(sample).split("\n")

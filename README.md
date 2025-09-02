@@ -1,4 +1,4 @@
-# advent_of_code_2024
+[Advent of code 2024](https://adventofcode.com/)
 - [x] Day 1
 - [x] Day 2
 - [ ] Day 3

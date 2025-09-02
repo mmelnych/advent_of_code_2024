@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe Day25::Task do
   subject(:task) { described_class.new(sample) }
 

@@ -1,0 +1,7 @@
+Style/Documentation:
+  Enabled: false
+Naming/HeredocDelimiterNaming:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'

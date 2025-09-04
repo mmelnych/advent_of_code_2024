@@ -7,7 +7,7 @@ module Day3
       SAMPLE_INPUT_FILE_PATH = "#{__dir__}/input.sample.txt"
 
       def call(sample)
-        data(sample).split("\n")
+        data(sample)
       end
 
       def data(sample)

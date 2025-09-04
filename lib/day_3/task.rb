@@ -11,8 +11,9 @@ module Day3
     end
 
     def call2
-      validated_input = filtered_commands_input(input)
-      sum_products(validated_input)
+      filtered_input = input.gsub(/don't\(\).*?do\(\)/m, '')
+
+      sum_products(filtered_input)
     end
 
     def input
@@ -23,10 +24,6 @@ module Day3
 
     def sum_products(input)
       input.scan(/mul\((\d{1,3}),(\d{1,3})\)/).sum { |a, b| a.to_i * b.to_i }
-    end
-
-    def filtered_commands_input(input)
-      input.gsub(/don't\(\).*?do\(\)/m, '')
     end
   end
 end

@@ -18,18 +18,15 @@ module Day6
 
     def call1
       row, col, direction = find_guardian
-      visited << [row, col]
 
       loop do
-        next_row, next_col = move(row, col, direction)
-        return visited.size if out_of_bounds?(next_row, next_col)
+        return visited.size if out_of_bounds?(row, col)
 
+        visited << [row, col]
         if obstacle_ahead?(row, col, direction)
           direction = turn_right(direction)
         else
-          row = next_row
-          col = next_col
-          visited << [row, col]
+          row, col = move(row, col, direction)
         end
       end
     end
@@ -73,6 +70,8 @@ module Day6
       dr, dc = DIRECTIONS[direction]
       nr = row + dr
       nc = col + dc
+
+      return false if out_of_bounds?(nr, nc)
 
       input[nr][nc] == '#'
     end

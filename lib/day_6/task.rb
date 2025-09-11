@@ -71,6 +71,7 @@ module Day6
       nr = row + dr
       nc = col + dc
 
+      #TODO Think about it maybe there is better way
       return false if out_of_bounds?(nr, nc)
 
       input[nr][nc] == '#'

@@ -7,18 +7,25 @@ module Day5
       SAMPLE_INPUT_FILE_PATH = "#{__dir__}/input.sample.txt"
 
       def call(sample)
-        rules, pages = data(sample).split("\n\n")
+        rules_str, pages_str = data(sample).split("\n\n")
+        rules = parse_rules(rules_str)
+        pages = parse_pages(pages_str)
+        { rules: rules, pages: pages }
+      end
 
-        rules = rules.split("\n").map do |line|
+      private
+
+      def parse_rules(rules_str)
+        rules = rules_str.split("\n").map do |line|
           line.split('|').map(&:to_i)
         end
+        rules.group_by(&:first).transform_values { |v| v.map(&:last) }
+      end
 
-        rules = rules.group_by(&:first).transform_values { |v| v.map(&:last) }
-
-        pages = pages.split("\n").map do |line|
+      def parse_pages(pages_str)
+        pages_str.split("\n").map do |line|
           line.split(',').map(&:to_i)
         end
-        { rules: rules, pages: pages }
       end
 
       def data(sample)

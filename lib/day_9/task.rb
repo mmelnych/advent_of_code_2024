@@ -22,13 +22,7 @@ module Day9
       disk.compact.map.with_index { |x, i| x * i }.sum
     end
 
-    def call2
-      disk = []
-      input.with_index do |(present, empty), i|
-        disk.concat([i] * present.to_i)
-        disk.concat([nil] * empty.to_i)
-      end
-    end
+    def call2; end
 
     def input
       @input ||= Input.call(@sample)

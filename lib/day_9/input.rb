@@ -7,7 +7,7 @@ module Day9
       SAMPLE_INPUT_FILE_PATH = "#{__dir__}/input.sample.txt"
 
       def call(sample)
-        data(sample).split("\n")
+        data(sample).split('').each_slice(2)
       end
 
       def data(sample)

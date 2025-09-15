@@ -24,18 +24,19 @@ module Day7
     end
 
     def valid_expression?(entry, operators)
-      combinations = operators.repeated_permutation(entry[:numbers].size - 1).to_a
+      operators.repeated_permutation(entry[:numbers].size - 1).any? do |ops|
+        evaluate_expression(entry[:numbers], ops) == entry[:result]
+      end
+    end
 
-      combinations.any? do |ops|
-        sum = entry[:numbers].first
-        entry[:numbers][1..].each_with_index do |num, idx|
-          sum = if ops[idx] == '||'
-                  "#{sum}#{num}".to_i
-                else
-                  sum.send(ops[idx] == '+' ? :+ : :*, num)
-                end
+    def evaluate_expression(numbers, ops)
+      numbers[1..].each_with_index.reduce(numbers[0]) do |sum, (num, idx)|
+        case ops[idx]
+        when '||' then "#{sum}#{num}".to_i
+        when '+'  then sum + num
+        when '*'  then sum * num
+        else raise "Unknown operator: #{ops[idx]}"
         end
-        sum == entry[:result]
       end
     end
   end

@@ -4,14 +4,14 @@
 - [x] Day 3
 - [ ] Day 4
 - [x] Day 5
-- [ ] Day 6
+- [x] Day 6(Part 2 left)
 - [x] Day 7
 - [ ] Day 8
-- [ ] Day 9
+- [x] Day 9(Part 2 left)
 - [ ] Day 10
-- [ ] Day 11
+- [x] Day 11
 - [ ] Day 12
-- [ ] Day 13
+- [x] Day 13
 - [ ] Day 14
 - [ ] Day 15
 - [ ] Day 16
